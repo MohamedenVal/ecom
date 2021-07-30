@@ -69,4 +69,30 @@ $(document).ready(function() {
             }
         }
     });
+
+
+
+    // qty section 
+
+    let $qty_up = $(".qty .qty-up");
+    let $qty_down = $(".qty .qty-down");
+    let $input = $(".qty .qty_input");
+
+    // click envent qty buton
+
+    $qty_up.click(function(e) {
+        if( $input.val() >= 1 && $input.val() <= 9 ){
+            $input.val(function(i, olval){
+                return ++olval;
+            });
+        }
+    });
+    // click on qty down button 
+    $qty_down.click(function(e) {
+        if( $input.val() >= 2 && $input.val() <= 10 ){
+            $input.val(function(i, olval){
+                return --olval;
+            });
+        }
+    });
 })
